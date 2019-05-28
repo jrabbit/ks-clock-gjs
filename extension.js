@@ -1,8 +1,7 @@
-
-const St = imports.gi.St;
-const Main = imports.ui.main;
-const Tweener = imports.ui.tweener;
-const GnomeDesktop = imports.gi.GnomeDesktop;
+const St = imports.gi.St
+const Main = imports.ui.main
+const Tweener = imports.ui.tweener
+const GnomeDesktop = imports.gi.GnomeDesktop
 
 let text, button, Clock
 
@@ -25,17 +24,15 @@ function init() {
                           x_fill: true,
                           y_fill: false,
                           track_hover: true });
-    let ks = GetKilosecondsNow()
-    let displayText = new St.Label({text: "%s ks".format(ks)})
-    button.set_child(displayText);
+    on_tick()
 }
 
 function enable() {
-    Main.panel._centerBox.insert_child_at_index(button, 0);
-    Clock = new GnomeDesktop.WallClock();
-    Clock.connect('notify::clock', on_tick);
+    Main.panel._centerBox.insert_child_at_index(button, 0)
+    Clock = new GnomeDesktop.WallClock()
+    Clock.connect('notify::clock', on_tick)
 }
 
 function disable() {
-    Main.panel._centerBox.remove_child(button);
+    Main.panel._centerBox.remove_child(button)
 }
