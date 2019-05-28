@@ -1,0 +1,23 @@
+{
+  "name": "ksclock_gnome_ext",
+  "version": "1.0.0",
+  "description": "Adds a kilosecond based clock to your top bar",
+  "main": "extension.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gnome-shell-extension",
+    "gnome"
+  ],
+  "author": "Jack Laxson",
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0"
+  }
+}
