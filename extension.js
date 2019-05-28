@@ -29,6 +29,7 @@ function init() {
 
 function enable() {
     Main.panel._centerBox.insert_child_at_index(button, 0)
+    // ref  gnome-shell /gnome-shell-3.5.4/js/ui/dateMenu.js 
     Clock = new GnomeDesktop.WallClock()
     Clock.connect('notify::clock', on_tick)
 }
