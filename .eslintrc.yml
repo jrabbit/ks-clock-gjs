@@ -1,0 +1,13 @@
+env:
+  es6: true
+  'gjs/shell-extension': true
+extends: plugin:gjs/extension
+plugins: ['gjs']
+globals:
+  Atomics: readonly
+  SharedArrayBuffer: readonly
+parserOptions:
+  ecmaVersion: 2018
+rules: {
+    semi: ["error", "never"]
+}
