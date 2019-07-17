@@ -18,16 +18,14 @@ function on_tick() {
     button.set_child(displayText)
 }
 
-function init() {
+
+function enable() {
     let button = new St.Bin({ style_class: 'panel-button',
         reactive: true,
         x_fill: true,
         y_fill: false,
         track_hover: true })
     on_tick()
-}
-
-function enable() {
     Main.panel._centerBox.insert_child_at_index(button, 0)
     // ref  gnome-shell /gnome-shell-3.5.4/js/ui/dateMenu.js
     let Clock = new GnomeDesktop.WallClock()
@@ -36,4 +34,5 @@ function enable() {
 
 function disable() {
     Main.panel._centerBox.remove_child(button)
+    Clock.disconnect(on_tick)
 }
