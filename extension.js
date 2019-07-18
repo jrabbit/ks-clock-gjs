@@ -18,13 +18,17 @@ function on_tick() {
     button.set_child(displayText)
 }
 
-
-function enable() {
-    let button = new St.Bin({ style_class: 'panel-button',
+function init() {
+    button = new St.Bin({ style_class: 'panel-button',
         reactive: true,
         x_fill: true,
         y_fill: false,
         track_hover: true })
+}
+
+
+function enable() {
+
     on_tick()
     Main.panel._centerBox.insert_child_at_index(button, 0)
     // ref  gnome-shell /gnome-shell-3.5.4/js/ui/dateMenu.js
