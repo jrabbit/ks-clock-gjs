@@ -1,6 +1,6 @@
 {
   "name": "ksclock_gnome_ext",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Adds a kilosecond based clock to your top bar",
   "main": "extension.js",
   "scripts": {
