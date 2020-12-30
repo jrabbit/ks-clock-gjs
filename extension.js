@@ -1,6 +1,9 @@
+'use strict'
+const ExtensionUtils = imports.misc.extensionUtils
+const Me = ExtensionUtils.getCurrentExtension()
+
 const St = imports.gi.St
 const Main = imports.ui.main
-const Tweener = imports.ui.tweener
 const GnomeDesktop = imports.gi.GnomeDesktop
 
 let text, button, clock_signal, Clock
@@ -18,20 +21,27 @@ function on_tick() {
     button.set_child(displayText)
 }
 
+function init() {
+    log(`initializing ${Me.metadata.name} version ${Me.metadata.version}`);
+}
+
 function enable() {
-    button = new St.Bin({ style_class: 'panel-button',
+    log(`enabling ${Me.metadata.name} version ${Me.metadata.version}`);
+    button = new St.Bin({ style_class: 'kiloseconds-panel-button panel-button',
         reactive: true,
-        x_fill: true,
-        y_fill: false,
+        //x_fill: true,
+        //y_fill: false,
         track_hover: true })
     on_tick()
-    Main.panel._centerBox.insert_child_at_index(button, 0)
+    //[1;4QrMain.panel._centerBox.insert_child_at_index(button, 0)
+    Main.panel._centerBox.add_child(button)
     // ref  gnome-shell /gnome-shell-3.5.4/js/ui/dateMenu.js
     Clock = new GnomeDesktop.WallClock()
     clock_signal = Clock.connect('notify::clock', on_tick)
 }
 
 function disable() {
+    log(`disabling ${Me.metadata.name} version ${Me.metadata.version}`);
     Main.panel._centerBox.remove_child(button)
     Clock.disconnect(clock_signal)
 }

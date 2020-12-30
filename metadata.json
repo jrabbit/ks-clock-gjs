@@ -4,6 +4,6 @@
   "uuid": "kiloseconds_clock@jack.getpizza.cat",
   "url":"https://github.com/jrabbit/ks-clock-gjs",
   "shell-version": [
-    "3.32.0"
+    "3.32.0", "3.38"
   ]
 }
